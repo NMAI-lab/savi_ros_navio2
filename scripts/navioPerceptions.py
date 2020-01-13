@@ -13,7 +13,7 @@ def callback(data):
     
     # Publish to the perceptions topic
     pub = rospy.Publisher('perceptions', String, queue_size=10)
-    rospy.init_node('navioPerceptionsTalker', anonymous=True)
+    #rospy.init_node('navioPerceptionsTalker', anonymous=True)
     message = "accelerometer({},{},{})".format(data.linear_acceleration.x, data.linear_acceleration.y, data.linear_acceleration.z)
     rospy.loginfo(message)
     pub.publish(message)
@@ -27,7 +27,7 @@ Publish to the 'perceptions' topic
 """
 def sendPerception(x, y, z):
     pub = rospy.Publisher('perceptions', String, queue_size=10)
-    rospy.init_node('navioPerceptionsTalker', anonymous=True)
+    #rospy.init_node('navioPerceptionsTalker', anonymous=True)
     message = "accelerometer({},{},{})".format(x,y,z)
     rospy.loginfo(message)
     pub.publish(message)
